@@ -54,5 +54,20 @@ public class Airplane {
     public void setLimitOfKg(int limitOfKg) {
         this.limitOfKg = limitOfKg;
     }
+    
+       public int addFlight(){
+        return ;
+    }
+    
+     @Override
+    public String toString() {
+        return "Airplane{" +
+                "name='" + name + '\'' +
+                ", model=" + model +
+                ", registrationId=" + registrationId +
+                ", sits=" + sits +
+                ", limitOfKg=" + limitOfKg +
+                '}';
+    }
 }
 
