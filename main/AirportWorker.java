@@ -1,5 +1,5 @@
 package main;
 
-public class AirportWorker {
+public class AirportWorker extends Employee{
 
 }
