@@ -55,8 +55,8 @@ public class Airplane {
         this.limitOfKg = limitOfKg;
     }
     
-       public int addFlight(){
-        return ;
+    private String addFlight(){
+        return "a Flight is added";
     }
     
      @Override
