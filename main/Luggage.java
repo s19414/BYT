@@ -5,7 +5,7 @@ public class Luggage {
     private int idLuggage;;
     private String category;
     private double weight;
-    public double price;
+    private double price;
 
     public Luggage(int idLuggage, String category, double weight, double price) {
         this.idLuggage = idLuggage;
