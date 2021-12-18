@@ -12,6 +12,7 @@ public class Issue {
 	//is the issue resolved?
 	public boolean resolved;
 	public Severity severity;
+	private Manager manager;
 	
 	public Issue(String _name, String _info, Severity _severity) {
 		name = _name;
@@ -21,5 +22,14 @@ public class Issue {
 	}
 	
 	public void notifyManager() {
+	}
+	
+	//getters and setters
+	public void setManager(Manager _manger){
+		manager = _manager;
+	}
+	
+	public Manager getManager(){
+		return manager;
 	}
 }
