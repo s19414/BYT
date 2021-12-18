@@ -3,10 +3,12 @@ package main;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Employee {
-	
+public class Employee {	
+	//constructor attributes
 	protected String firstName;
-	protected String lastName;
+	protected String lastName;	
+	
+	//helper attributes
 	private String nameRegex = "[a-zA-Z\\s]+";
 	
 	public Employee(String firstName, String lastName) {
