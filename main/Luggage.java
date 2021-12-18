@@ -1,17 +1,31 @@
 package main;
 
 public class Luggage {
-
+	enum Category{
+		HAND,
+		HOLD
+	}
+	//constructor attributes
     private int idLuggage;;
-    private String category;
+    private Category category;
     private double weight;
     private double price;
+    
+    //association attributes
+    private Passenger passenger;
 
-    public Luggage(int idLuggage, String category, double weight, double price) {
+    public Luggage(int idLuggage, Category category, double weight, double price, Passenger passenger) {
         this.idLuggage = idLuggage;
+        if(category == null) {
+        	throw new NullPointerException("Category cannot be null");
+        }
         this.category = category;
         this.weight = weight;
         this.price = price;
+        if(passenger == null) {
+        	throw new NullPointerException("Passenger cannot be null");
+        }
+        this.passenger = passenger;
     }
 
     public int getIdLuggage() {
@@ -22,11 +36,14 @@ public class Luggage {
         this.idLuggage = idLuggage;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
+    	if(category == null) {
+    		throw new NullPointerException("Category cannot be null");
+    	}
         this.category = category;
     }
 
@@ -44,6 +61,17 @@ public class Luggage {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+    
+    public Passenger getPassenger() {
+    	return passenger;
+    }
+    
+    public void setPassenger(Passenger passenger) {
+    	if(passenger == null) {
+        	throw new NullPointerException("Passenger cannot be null");
+        }
+    	this.passenger = passenger;
     }
 
 }
