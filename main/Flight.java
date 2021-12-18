@@ -1,6 +1,7 @@
 package main;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Flight {
@@ -13,10 +14,18 @@ public class Flight {
 	public String destinationTo;
 	public int limitPerHandLuggage;
 	
+	//association attributes
+	private Airplane airplane;
+	private ArrayList<CheckIn> checkInList = new ArrayList<CheckIn>();
+	
+
 	//derived attributes
 	public int soldSeats;
 	public LocalTime delay;
 	public double actualKgOnBoard;
+	
+	//temporary attributes
+	private String flightInformation = "don't crash lel";
 	
 	public Flight(String _idFlight, Date _estimatedDateOfDeparture,
 			Date _actualDateOfDeparture, Date _actualDateOfArrival, String _destinationFrom,
@@ -31,9 +40,27 @@ public class Flight {
 		//TODO derived properties
 	}
 	
-	public void viewInformationAboutAllFlights() {	
+	public String viewInformationAboutAllFlights() {
+		return flightInformation;
 	}
 	
-	public void updateInformationAboutAllFlights() {	
+	public void updateInformationAboutAllFlights(String _flightInformation) {
+		flightInformation = _flightInformation;
+	}
+	
+	//getters and setters
+	public Airplane getAirplane() {
+		return airplane;
+	}
+	public void setAirplane(Airplane airplane) {
+		this.airplane = airplane;
+	}
+	
+	public void addCheckIn(CheckIn checkIn) {
+		checkInList.add(checkIn);
+	}
+	
+	public ArrayList<CheckIn> getCheckIns() {
+		return new ArrayList<CheckIn>(checkInList);
 	}
 }
