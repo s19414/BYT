@@ -1,9 +1,9 @@
 package main;
 
 public class AirportWorker extends Employee{
-    AirportWorker airportWorker = new AirportWorker();
 
-    public AirportWorker() {
+    public AirportWorker(String firstName, String lastName) {
+        super(firstName, lastName);
     }
 
     private String flagAnIssue(){
