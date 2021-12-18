@@ -6,7 +6,7 @@ public class AirportWorker extends Employee{
         super(firstName, lastName);
     }
 
-    private String flagAnIssue(){
+    public String flagAnIssue(){
         return "Issue has been flagged";
     }
 }

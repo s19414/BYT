@@ -19,11 +19,11 @@ public class Manager extends Employee {
     public void setIssues(ArrayList<Issue> issues) {
     	if(issues == null) {
     		throw new NullPointerException("Issue cannot be null");
-    	} 
+    	}
     	this.issues = new ArrayList<>(issues);
     }
 
-    private String resolveIssue(){
+    public String resolveIssue(){
         return "Issue has been resolved";
     }
 

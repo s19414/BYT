@@ -17,12 +17,12 @@ public class Flight {
 	//association attributes
 	private Airplane airplane;
 	private ArrayList<CheckIn> checkInList = new ArrayList<CheckIn>();
-	
+	private ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
 
 	//derived attributes
 	public int soldSeats;
-	public LocalTime delay;
-	public double actualKgOnBoard;
+	private LocalTime delay = LocalTime.MIN;
+	private double actualKgOnBoard = 0.0;
 	
 	//temporary attributes
 	private String flightInformation = "don't crash lel";
@@ -55,12 +55,39 @@ public class Flight {
 	public void setAirplane(Airplane airplane) {
 		this.airplane = airplane;
 	}
-	
-	public void addCheckIn(CheckIn checkIn) {
-		checkInList.add(checkIn);
+
+	public ArrayList<CheckIn> getCheckInList() {
+		return checkInList;
+	}
+
+	public void setCheckInList(ArrayList<CheckIn> checkInList) {
+		this.checkInList = checkInList;
+		//update actualKgOnBoard as passengers check in
+		actualKgOnBoard = 0;
+		for (CheckIn checkIn : checkInList) {
+			actualKgOnBoard += checkIn.getHandLuggageWeight();
+		}
+	}
+
+	public ArrayList<Ticket> getTicketList() {
+		return ticketList;
+	}
+
+	public void setTicketList(ArrayList<Ticket> ticketList) {
+		this.ticketList = ticketList;
+		soldSeats = ticketList.size();
+	}
+
+	public LocalTime getDelay() {
+		return delay;
+	}
+
+	public void setDelay(LocalTime delay) {
+		this.delay = delay;
+	}
+
+	public double getActualKgOnBoard() {
+		return actualKgOnBoard;
 	}
 	
-	public ArrayList<CheckIn> getCheckIns() {
-		return new ArrayList<CheckIn>(checkInList);
-	}
 }

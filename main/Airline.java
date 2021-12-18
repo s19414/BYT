@@ -1,10 +1,19 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Airline {
     public String name;
     public String address;
-
+    private ArrayList<Airplane> airplaneList = new ArrayList<Airplane>();
+    
     public Airline(String name, String address) {
+    	if(name == null) {
+    		throw new NullPointerException("Name is null");
+    	}
+    	if(address == null) {
+    		throw new NullPointerException("Address is null");
+    	}
         this.name = name;
         this.address = address;
     }
@@ -32,4 +41,12 @@ public class Airline {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+	public ArrayList<Airplane> getAirplaneList() {
+		return airplaneList;
+	}
+
+	public void setAirplaneList(ArrayList<Airplane> airplaneList) {
+		this.airplaneList = airplaneList;
+	}
 }

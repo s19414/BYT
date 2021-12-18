@@ -6,7 +6,7 @@ public class Luggage {
 		HOLD
 	}
 	//constructor attributes
-    private int idLuggage;;
+    private int idLuggage;
     private Category category;
     private double weight;
     private double price;

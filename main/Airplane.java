@@ -7,12 +7,16 @@ public class Airplane {
     public int sits;
     public int limitOfKg;
 
-    public Airplane(String name, int model, int registrationId, int sits, int limitOfKg) {
+    //association properties
+    private Airline airline;
+    
+    public Airplane(String name, int model, int registrationId, int sits, int limitOfKg, Airline _airline) {
         this.name = name;
         this.model = model;
         this.registrationId = registrationId;
         this.sits = sits;
         this.limitOfKg = limitOfKg;
+        this.setAirline(_airline);
     }
 
     public String getName() {
@@ -55,7 +59,7 @@ public class Airplane {
         this.limitOfKg = limitOfKg;
     }
     
-    private String addFlight(){
+    public String addFlight(){
         return "a Flight is added";
     }
     
@@ -69,5 +73,13 @@ public class Airplane {
                 ", limitOfKg=" + limitOfKg +
                 '}';
     }
+
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}
 }
 
