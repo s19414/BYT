@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class CheckIn {
-	
+	//constructor attributes
 	private Date date;
+	
+	//derived attributes
+	private double handLuggageWeight;	
+	
+	//association attributes
 	private Flight flight;
 	private Passenger passenger;
-	private double handLuggageWeight;
 	
 	public CheckIn(Date date, Flight flight, Passenger passenger) {
 		if(date == null) {
@@ -28,10 +32,9 @@ public class CheckIn {
 	
 	private void calculateHandLuggageWeight() {
 		handLuggageWeight = 0;
-		ArrayList<Luggage> luggageList = passenger.getLuggage();
-		int size = luggageList.size();
+		ArrayList<Luggage> luggageList = passenger.getLuggages();
 		for(Luggage luggage : luggageList) {
-			if(luggage.getCategory().equals("hand")) {
+			if(luggage.getCategory().equals(Luggage.Category.HAND)) {
 				handLuggageWeight+=luggage.getWeight();
 			}
 		}			
@@ -39,6 +42,10 @@ public class CheckIn {
 
 	public Date getDate() {
 		return date;
+	}
+	
+	public double getHandLuggageWeight() {
+		return handLuggageWeight;
 	}
 	
 	public Flight getFlight() {
@@ -68,6 +75,7 @@ public class CheckIn {
 			throw new NullPointerException("Passenger cannot be null");
 		}
 		this.passenger = passenger;
+		calculateHandLuggageWeight();
 	}
 
 }
