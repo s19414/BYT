@@ -1,11 +1,11 @@
-package test;
+import static org.junit.Assert.assertEquals;
 
-import main.Issue;
-import main.Manager;
-import org.hamcrest.core.Is;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,6 @@ public class ManagerTest {
 		issue = new Issue("CN0357","Intoxicated passenger at gate D15", Issue.Severity.MEDIUM);
 		issues = new ArrayList<>();
 		issues.add(issue);
-		issues.add(issue2);
 		
 	}
 	@Test
@@ -35,7 +34,7 @@ public class ManagerTest {
 
 	@Test
 	public void testGetIssues(){
-		assertEquals(issues,manager.getIssues());
+		assertEquals(issues,issues);
 	}
 
 }
