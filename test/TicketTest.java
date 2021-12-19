@@ -1,13 +1,13 @@
 package test;
-
 import main.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertThrows;
-import java.util.ArrayList;
+
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertThrows;
 
 public class TicketTest {
 
@@ -21,9 +21,9 @@ public class TicketTest {
 	public void setUp() {
 		airline = new Airline("Finnair", "Finland");
 		airplane = new Airplane("Boeing666", 444, 13, 1, 0, airline);
-		flight = new Flight("FIN007",new Date(2000), new Date(2500),new Date(4000),new Date(20000),"London Heathrow", "New York JFK", 2,airplane);
+		flight = new Flight("FIN007", new Date(2000), new Date(2500), new Date(4000), new Date(20000), "London Heathrow", "New York JFK", 2, airplane);
 		passenger = new Passenger("Mary", "Jane");
-		ticket = new Ticket(Ticket.TicketClass.ECONOMY, 20, "Passport", 200.50, 0.0, 1, flight,passenger);
+		ticket = new Ticket(Ticket.TicketClass.ECONOMY, 20, "Passport", 200.50, 0.0, 1, flight, passenger);
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class TicketTest {
 
 	@Test
 	public void testGetClassOfTicket() {
-		assertEquals(Ticket.TicketClass.ECONOMY, ticket.getClassOfTicket());
+		assertEquals(Ticket.TicketClass.ECONOMY, ticket.getClassOfTicket());   // CHANGE
 	}
 
 	@Test
@@ -68,23 +68,23 @@ public class TicketTest {
 
 	@Test
 	public void testGetPrice() {
-		assertEquals(200.50, ticket.getPrice(),0);
+		assertEquals(200.50, ticket.getPrice(), 0);
 	}
 
 	@Test
 	public void testSetPrice() {
 		ticket.setPrice(210.2);
-		assertEquals(210.2, ticket.getPrice(),0);
+		assertEquals(210.2, ticket.getPrice(), 0);
 	}
 
 	@Test
-	public void testGetLuggagePenalty() {                                         
-		assertEquals(0.0, ticket.getLuggagePenalty(),0);
+	public void testGetLuggagePenalty() {
+		assertEquals(0.0, ticket.getLuggagePenalty(), 0);
 	}
 
 	@Test
 	public void testGetMaxLuggage() {
-		assertEquals(1, ticket.getMaxLuggage(),0);
+		assertEquals(1, ticket.getMaxLuggage(), 0);
 	}
 
 	@Test
@@ -94,7 +94,7 @@ public class TicketTest {
 
 	@Test
 	public void testSetFlight() {
-		Flight flight2 = new Flight("FIN009",new Date(2000), new Date(2500),new Date(4000),new Date(20000),"London Heathrow", "Brussel JFK", 2,airplane);
+		Flight flight2 = new Flight("FIN009", new Date(2000), new Date(2500), new Date(4000), new Date(20000), "London Heathrow", "Brussel JFK", 2, airplane);
 		ticket.setFlight(flight2);
 		assertEquals(flight2, ticket.getFlight());
 		assertThrows(NullPointerException.class, () -> {ticket.setFlight(null);});
