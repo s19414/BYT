@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +13,7 @@ public class AirportWorkerTest {
 	
 	@Before
 	public void setUp() {
-		airportWorker = new AirportWorker("Herp", "Derp");
+		airportWorker = new AirportWorker("John", "Smith");
 	}
 	
 	@Test
