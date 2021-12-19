@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class AirlineTest {
 	public void testSetName() {
 		airline.setName("New Test Airline");
 		assertEquals("New Test Airline", airline.getName());
+		assertThrows(NullPointerException.class, () -> {airline.setName(null);});
 	}
 	
 	@Test
@@ -47,11 +49,20 @@ public class AirlineTest {
 	public void testSetAddress() {
 		airline.setAddress("Warsaw");
 		assertEquals("Warsaw", airline.getAddress());
+		assertThrows(NullPointerException.class, () -> {airline.setAddress(null);});
 	}
 	
 	//test association
 	@Test
-	public void testAssociation() {
+	public void testgetAirplaneList() {
 		assertEquals(airplaneList, airline.getAirplaneList());
+	}
+	
+	@Test
+	public void testSetAirplaneList() {
+		ArrayList<Airplane> newList = new ArrayList<>();
+		newList.add(airplane);
+		airline.setAirplaneList(newList);
+		assertEquals(newList, airline.getAirplaneList());
 	}
 }
