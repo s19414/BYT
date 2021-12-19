@@ -41,7 +41,9 @@ public class Ticket {
         	throw new NullPointerException("Passenger cannot be null");
         }
         this.passenger = passenger;
+        this._class = _class;
         calculateLuggagePenalty();
+        
     }
 
     public String checkInPassanger(){
