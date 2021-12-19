@@ -3,8 +3,8 @@ package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-import java.sql.Date;
-import java.time.LocalDate;
+import java.util.Date;
+import java.time.Instant;
 import java.util.ArrayList;
 
 import org.junit.Before;
@@ -28,8 +28,8 @@ public class AirplaneTest {
 		airline = new Airline("Beelzebub Airlines", "Hell");
 		airline2 = new Airline("HerpyDerpHerp", "Derp");
 		airplane = new Airplane("Boeing666", 444, 13, 1, 0, airline);
-		flight1 = new Flight("BA007",Date.valueOf(LocalDate.now()), Date.valueOf(LocalDate.now()),Date.valueOf(LocalDate.now()),Date.valueOf(LocalDate.now()),"London Heathrow", "New York JFK", 2);
-		flight2 = new Flight("AA201",Date.valueOf(LocalDate.now()), Date.valueOf(LocalDate.now()),Date.valueOf(LocalDate.now()),Date.valueOf(LocalDate.now()),"London Heathrow", "New York JFK", 2);
+		flight1 = new Flight("BA007",Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2);
+		flight2 = new Flight("AA201",Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2);
 		flightList = new ArrayList<>();
 		flightList.add(flight1);
 		flightList.add(flight2);
