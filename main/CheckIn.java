@@ -30,6 +30,7 @@ public class CheckIn {
 		calculateHandLuggageWeight();
 	}
 	
+	//PRIVATE helper function, used in setPassenger()
 	private void calculateHandLuggageWeight() {
 		handLuggageWeight = 0;
 		ArrayList<Luggage> luggageList = passenger.getLuggages();

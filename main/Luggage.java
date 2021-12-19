@@ -1,7 +1,7 @@
 package main;
 
 public class Luggage {
-	enum Category{
+	public static enum Category{
 		HAND,
 		HOLD
 	}
