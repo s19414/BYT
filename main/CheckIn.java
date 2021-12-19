@@ -38,7 +38,7 @@ public class CheckIn {
 			if(luggage.getCategory().equals(Luggage.Category.HAND)) {
 				handLuggageWeight+=luggage.getWeight();
 			}
-		}			
+		}
 	}
 
 	public Date getDate() {
