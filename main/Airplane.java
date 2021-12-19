@@ -1,22 +1,32 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Airplane {
     public String name;
     public int model;
     public int registrationId;
-    public int sits;
+    public int seats;
     public int limitOfKg;
 
     //association properties
     private Airline airline;
+    private ArrayList<Flight> flightList;
     
-    public Airplane(String name, int model, int registrationId, int sits, int limitOfKg, Airline _airline) {
-        this.name = name;
+    public Airplane(String name, int model, int registrationId, int seats, int limitOfKg, Airline _airline) {
+        if(name == null) {
+        	throw new NullPointerException("Name cannot be null");
+        }
+    	this.name = name;
         this.model = model;
         this.registrationId = registrationId;
-        this.sits = sits;
+        this.seats = seats;
         this.limitOfKg = limitOfKg;
+        if(_airline == null) {
+        	throw new NullPointerException("Airline cannot be null");
+        }
         this.setAirline(_airline);
+        flightList = new ArrayList<>();
     }
 
     public String getName() {
@@ -24,6 +34,9 @@ public class Airplane {
     }
 
     public void setName(String name) {
+    	if(name == null) {
+        	throw new NullPointerException("Name cannot be null");
+        }
         this.name = name;
     }
 
@@ -43,12 +56,12 @@ public class Airplane {
         this.registrationId = registrationId;
     }
 
-    public int getSits() {
-        return sits;
+    public int getSeats() {
+        return seats;
     }
 
-    public void setSits(int sits) {
-        this.sits = sits;
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 
     public int getLimitOfKg() {
@@ -69,7 +82,7 @@ public class Airplane {
                 "name='" + name + '\'' +
                 ", model=" + model +
                 ", registrationId=" + registrationId +
-                ", sits=" + sits +
+                ", sits=" + seats +
                 ", limitOfKg=" + limitOfKg +
                 '}';
     }
@@ -79,7 +92,22 @@ public class Airplane {
 	}
 
 	public void setAirline(Airline airline) {
+		if(airline == null) {
+			throw new NullPointerException("Airline cannot be null");
+		}
 		this.airline = airline;
+	}
+	
+	public ArrayList<Flight> getFlightList(){
+		ArrayList<Flight> copyList = new ArrayList<>(flightList);
+		return copyList;
+	}
+	
+	public void setFlightList(ArrayList<Flight> flightList) {
+		if(flightList == null) {
+			throw new NullPointerException("Flight list cannot be null");
+		}
+		this.flightList = new ArrayList<>(flightList);
 	}
 }
 
