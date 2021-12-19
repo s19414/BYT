@@ -3,13 +3,13 @@ package main;
 import java.util.ArrayList;
 
 public class Ticket {
-	enum Class{
+	enum TicketClass{
 		ECONOMY,
 		BUSINESS,
 		FIRST
 	}
 	//constructor attributes
-    private Class _class;
+    private TicketClass _class;
     private int seatNummber;
     private String travelDocument;
     private double price;
@@ -22,7 +22,7 @@ public class Ticket {
     private Flight flight;
     private Passenger passenger;
 
-    public Ticket(Class _class, int seatNummber, String travelDocument, double price, double luggagePenalty, int maxLuggage, Flight flight, Passenger passenger) {
+    public Ticket(TicketClass _class, int seatNummber, String travelDocument, double price, double luggagePenalty, int maxLuggage, Flight flight, Passenger passenger) {
         if(_class == null) {
         	throw new NullPointerException("Class cannot be null");
         }
@@ -48,11 +48,11 @@ public class Ticket {
         return "Passenger checked in";
     }
     
-    public Class getClassOfTicket() {
+    public TicketClass getClassOfTicket() {
     	return _class;
     }
     
-    public void setClassOfTicket(Class _class) {
+    public void setClassOfTicket(TicketClass _class) {
     	if(_class == null) {
     		throw new NullPointerException("Class cannot be null");
     	}
