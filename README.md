@@ -1,3 +1,3 @@
 # BYT-Task-9
 
-CheckIn class has to be fixed
+CheckIn class has to be inspected, and TestCheckIn needs fixin'.
