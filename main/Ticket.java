@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 
 public class Ticket {
-	enum TicketClass{
+	public static enum TicketClass{
 		ECONOMY,
 		BUSINESS,
 		FIRST
