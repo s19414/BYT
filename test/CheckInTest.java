@@ -10,6 +10,8 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
+import main.Airline;
+import main.Airplane;
 import main.CheckIn;
 import main.Flight;
 import main.Passenger;
@@ -22,15 +24,19 @@ public class CheckInTest {
 	Passenger passenger;
 	ArrayList<Luggage> luggageList;
 	Luggage luggage1;
+	Airline airline;
+	Airplane airplane;
 	
 	@Before
 	public void setUp() {
+		airline = new Airline("Beelzebub Airlines", "Hell");
+		airplane = new Airplane("Boeing666", 444, 13, 1, 0, airline);
 		luggageList = new ArrayList<Luggage>();
 		passenger = new Passenger("John", "Smith");
 		luggage1 = new Luggage(1,Luggage.Category.HAND, 70, 2, passenger);
 		luggageList.add(luggage1);
 		passenger.setLuggages(luggageList);
-		flight1 = new Flight("BA007", Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2);
+		flight1 = new Flight("BA007", Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2,airplane);
 		checkIn = new CheckIn(new Date(12345), flight1, passenger);
 		
 	}
@@ -59,7 +65,7 @@ public class CheckInTest {
 	
 	@Test
 	public void testSetFlight() {
-		Flight flight2 = new Flight("AA201", Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2);
+		Flight flight2 = new Flight("AA201", Date.from(Instant.now()), Date.from(Instant.now()),Date.from(Instant.now()),Date.from(Instant.now()),"London Heathrow", "New York JFK", 2,airplane);
 		checkIn.setFlight(flight2);
 		assertEquals(flight2, checkIn.getFlight());
 		assertThrows(NullPointerException.class, () -> {checkIn.setFlight(null);});
