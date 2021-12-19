@@ -23,6 +23,9 @@ public class Airline {
     }
 
     public void setName(String name) {
+    	if(name == null) {
+    		throw new NullPointerException("Name is null");
+    	}
         this.name = name;
     }
 
@@ -31,6 +34,9 @@ public class Airline {
     }
 
     public void setAddress(String address) {
+    	if(address == null) {
+    		throw new NullPointerException("Address is null");
+    	}
         this.address = address;
     }
 
