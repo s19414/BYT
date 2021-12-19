@@ -23,7 +23,7 @@ public class TicketTest {
 		airplane = new Airplane("Boeing666", 444, 13, 1, 0, airline);
 		flight = new Flight("FIN007",new Date(2000), new Date(2500),new Date(4000),new Date(20000),"London Heathrow", "New York JFK", 2,airplane);
 		passenger = new Passenger("Mary", "Jane");
-		ticket = new Ticket(Ticket.TicketClass.ECONOMY, 20, "Passport", 200.50, 20.0, 1, flight,passenger);
+		ticket = new Ticket(Ticket.TicketClass.ECONOMY, 20, "Passport", 200.50, 0.0, 1, flight,passenger);
 	}
 
 	@Test
@@ -78,8 +78,8 @@ public class TicketTest {
 	}
 
 	@Test
-	public void testGetLuggagePenalty() {                                         //CHANGE_ERROR
-		assertEquals(20.0, ticket.getLuggagePenalty(),0);
+	public void testGetLuggagePenalty() {                                         
+		assertEquals(0.0, ticket.getLuggagePenalty(),0);
 	}
 
 	@Test
