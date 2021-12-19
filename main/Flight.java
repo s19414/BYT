@@ -92,12 +92,14 @@ public class Flight {
 	}
 	public void setEstimatedDateOfArrival(Date _estimatedDateOfArrival) {
 		estimatedDateOfArrival = _estimatedDateOfArrival;
+		calculateDelay();
 	}
 	public Date getActualDateOfArrival() {
 		return actualDateOfArrival;
 	}
 	public void setActualDateOfArrival(Date _actualDateOfArrival) {
 		actualDateOfArrival = _actualDateOfArrival;
+		calculateDelay();
 	}
 	public String getDestinationFrom() {
 		return destinationFrom;
@@ -160,6 +162,8 @@ public class Flight {
 			throw new NullPointerException("Ticket list cannot be null");
 		}
 		ticketList = new ArrayList<>(newTicketList);
+		calculateSoldSeats();
+		calculateKgOnBoard();
 	}
 	
 	private void calculateDelay() {
