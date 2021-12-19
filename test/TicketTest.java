@@ -3,7 +3,7 @@ package test;
 import main.*;
 import org.junit.Before;
 import org.junit.Test;
-//import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertThrows;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -33,14 +33,14 @@ public class TicketTest {
 
 	@Test
 	public void testGetClassOfTicket() {
-		assertEquals(Ticket.TicketClass.ECONOMY, ticket.getClassOfTicket());   // CHANGE
+		assertEquals(Ticket.TicketClass.ECONOMY, ticket.getClassOfTicket());
 	}
 
 	@Test
-	public void testSetClassOfTicket() { //CHANGE
-		//ticket.setClassOfTicket();
-		//assertEquals("FIN243", ticket.getClassOfTicket());
-		//assertThrows(NullPointerException.class, () -> {ticket.setClassOfTicket(null);});
+	public void testSetClassOfTicket() {
+		ticket.setClassOfTicket(Ticket.TicketClass.BUSINESS);
+		assertEquals(Ticket.TicketClass.BUSINESS, ticket.getClassOfTicket());
+		assertThrows(NullPointerException.class, () -> {ticket.setClassOfTicket(null);});
 	}
 
 	@Test
@@ -78,7 +78,7 @@ public class TicketTest {
 	}
 
 	@Test
-	public void testGetLuggagePenalty() {
+	public void testGetLuggagePenalty() {                                         //CHANGE_ERROR
 		assertEquals(20.0, ticket.getLuggagePenalty(),0);
 	}
 
