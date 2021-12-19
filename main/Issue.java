@@ -1,7 +1,7 @@
 package main;
 //TODO
 public class Issue {
-	enum Severity{
+	public static enum Severity{
 		LOW,
 		MEDIUM,
 		HIGH
