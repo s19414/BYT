@@ -9,6 +9,7 @@ public class Flight {
 	public String idFlight;
 	public Date estimatedDateOfDeparture;
 	public Date actualDateOfDeparture;
+	public Date estimatedDateOfArrival;
 	public Date actualDateOfArrival;
 	public String destinationFrom;
 	public String destinationTo;
@@ -25,14 +26,15 @@ public class Flight {
 	private double actualKgOnBoard = 0.0;
 	
 	//temporary attributes
-	private String flightInformation = "don't crash lel";
+	private String flightInformation = "Some flight information";
 	
 	public Flight(String _idFlight, Date _estimatedDateOfDeparture,
-			Date _actualDateOfDeparture, Date _actualDateOfArrival, String _destinationFrom,
+			Date _actualDateOfDeparture, Date _estimatedDateOfArrival, Date _actualDateOfArrival, String _destinationFrom,
 			String _destinationTo, int _limitPerHandLuggage) {
 		idFlight = _idFlight;
 		estimatedDateOfDeparture = _estimatedDateOfDeparture;
 		actualDateOfDeparture = _actualDateOfDeparture;
+		estimatedDateOfArrival = _estimatedDateOfArrival;
 		actualDateOfArrival = _actualDateOfArrival;
 		destinationFrom = _destinationFrom;
 		destinationTo = _destinationTo;
