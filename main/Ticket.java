@@ -33,7 +33,6 @@ public class Ticket {
         this.travelDocument = travelDocument;
         this.price = price;
         this.maxLuggage = maxLuggage;
-        calculateLuggagePenalty();
         if(flight == null) {
         	throw new NullPointerException("Flight cannot be null");
         }
@@ -42,6 +41,7 @@ public class Ticket {
         	throw new NullPointerException("Passenger cannot be null");
         }
         this.passenger = passenger;
+        calculateLuggagePenalty();
     }
 
     public String checkInPassanger(){
